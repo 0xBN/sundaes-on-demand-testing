@@ -7,15 +7,18 @@ const SummaryForm = () => {
     setTcChecked(!tcChecked);
   };
 
-  const checkboxLabel = (
-    <label htmlFor='terms'>
-      I agree to <span className={`text-blue-800`}>Terms and Conditions</span>
-    </label>
-  );
-
   return (
     <div>
-      {checkboxLabel}
+      <label htmlFor='terms'>
+        I agree to
+        <div
+          className='tooltip tooltip-right tooltip-error'
+          data-tip='No ice cream will actually be delivered'
+          data-testid='tooltipTC'
+        >
+          <div className={`text-blue-800`}>Terms and Conditions</div>
+        </div>
+      </label>
       <input
         type='checkbox'
         id='terms'
